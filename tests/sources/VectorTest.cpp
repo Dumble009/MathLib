@@ -42,7 +42,12 @@ void Vector3Tests(const T &x, const T &y, const T &z)
 
     ASSERT_TRUE(v3 == v4);
 
-    // 掛け算が正しくできるかどうか
+    // スカラーが先頭に来る掛け算が正しくできるかどうか
+    v3 = static_cast<T>(10) * v1;
+
+    ASSERT_TRUE(v3 == v4);
+
+    // 割り算が正しくできるかどうか
     v3 = v1 / static_cast<T>(10);
     v4 = VT(v1.x / 10, v1.y / 10, v1.z / 10);
 
@@ -86,7 +91,12 @@ void Vector2Tests(const T &x, const T &y)
 
     ASSERT_TRUE(v3 == v4);
 
-    // 掛け算が正しくできるかどうか
+    // スカラーが先頭に来る掛け算が正しくできるかどうか
+    v3 = static_cast<T>(10) * v1;
+
+    ASSERT_TRUE(v3 == v4);
+
+    // 割り算が正しくできるかどうか
     v3 = v1 / static_cast<T>(10);
     v4 = VT(v1.x / 10, v1.y / 10);
 

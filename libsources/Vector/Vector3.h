@@ -16,7 +16,16 @@ namespace math
 
         Vector3Imp<T> operator*(const T &s) const;
         Vector3Imp<T> operator/(const T &s) const;
+
+        template <class U>
+        friend Vector3Imp<U> operator*(const U &s, const Vector3Imp<U> &v);
     };
+
+    template <class T>
+    Vector3Imp<T> operator*(const T &s, const Vector3Imp<T> &v)
+    {
+        return v * s;
+    }
 
     using Vector3 = Vector3Imp<float>;
 }
