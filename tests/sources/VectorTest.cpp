@@ -4,16 +4,13 @@
 
 using namespace math;
 
-template <class VT>
-void CompareVector3(const VT &v1, const VT &v2)
-{
-}
-
 template <class T, class VT>
 void Vector3Tests(const T &x, const T &y, const T &z)
 {
     VT v1 = VT(x, y, z);
     VT v2 = VT(x, y, z);
+
+    ASSERT_TRUE(v1 == v2);
 }
 
 template <class T>
