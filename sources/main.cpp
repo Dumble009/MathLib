@@ -1,4 +1,4 @@
-// ----------STLのinclude----------
+﻿// ----------STLのinclude----------
 #include <iostream> // 入出力
 #include "MathLib.h"
 
