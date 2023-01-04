@@ -6,7 +6,7 @@
 namespace math
 {
     template <class T>
-    Vector3<T>::Vector3(const T &_x, const T &_y, const T &_z)
+    Vector3Imp<T>::Vector3Imp(const T &_x, const T &_y, const T &_z)
     {
         x = _x;
         y = _y;
@@ -14,7 +14,7 @@ namespace math
     }
 
     template <class T>
-    T &Vector3<T>::operator[](size_t i)
+    T &Vector3Imp<T>::operator[](size_t i)
     {
         if (i == 0)
         {
@@ -33,7 +33,7 @@ namespace math
     }
 
     template <class T>
-    T const &Vector3<T>::operator[](size_t i) const
+    T const &Vector3Imp<T>::operator[](size_t i) const
     {
         if (i == 0)
         {
@@ -51,5 +51,5 @@ namespace math
         throw std::out_of_range("invalid range access to Vector");
     }
 
-    template class Vector3<float>;
+    template class Vector3Imp<float>;
 }
