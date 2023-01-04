@@ -43,6 +43,18 @@ namespace math
         throw std::out_of_range("invalid range access to Vector");
     }
 
+    template <class T>
+    Vector2Imp<T> Vector2Imp<T>::operator+(const Vector2Imp<T> &v) const
+    {
+        return Vector2Imp<T>(this->x + v.x, this->y + v.y);
+    }
+
+    template <class T>
+    Vector2Imp<T> Vector2Imp<T>::operator-(const Vector2Imp<T> &v) const
+    {
+        return Vector2Imp<T>(this->x - v.x, this->y - v.y);
+    }
+
     template class Vector2Imp<float>;
     template class Vector2Imp<double>;
     template class Vector2Imp<int>;

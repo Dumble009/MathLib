@@ -40,7 +40,11 @@ void Vector3Tests(const T &x, const T &y, const T &z)
 template <class T, class VT>
 void Vector2Tests(const T &x, const T &y)
 {
+    // コンストラクタが正しく機能するかどうか
     VT v1 = VT(x, y);
+    ASSERT_EQ(v1.x, x);
+    ASSERT_EQ(v1.y, y);
+
     VT v2 = VT(x, y);
 
     ASSERT_TRUE(v1 == v2);
@@ -50,6 +54,18 @@ void Vector2Tests(const T &x, const T &y)
 
     ASSERT_FALSE(v1 == v3);
     ASSERT_TRUE(v1 != v3);
+
+    // 足し算が正しくできるかどうか
+    v3 = v1 + v2;
+    VT v4 = VT(v1.x + v2.x, v1.y + v2.y);
+
+    ASSERT_TRUE(v3 == v4);
+
+    // 引き算が正しくできるかどうか
+    v3 = v1 - v2;
+    v4 = VT(v1.x - v2.x, v1.y - v2.y);
+
+    ASSERT_TRUE(v3 == v4);
 }
 
 TEST(CreateVector3, BasicAssertions)
