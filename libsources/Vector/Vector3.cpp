@@ -52,4 +52,7 @@ namespace math
     }
 
     template class Vector3Imp<float>;
+    template class Vector3Imp<double>;
+    template class Vector3Imp<int>;
+    template class Vector3Imp<long long>;
 }
