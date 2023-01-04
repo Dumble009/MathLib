@@ -60,6 +60,14 @@ namespace math
                MathFunctions::Compare(this->z, v.z);
     }
 
+    template <class T>
+    bool Vector3Imp<T>::operator!=(const Vector3Imp<T> &v) const
+    {
+        return !(MathFunctions::Compare(this->x, v.x) &&
+                 MathFunctions::Compare(this->y, v.y) &&
+                 MathFunctions::Compare(this->z, v.z));
+    }
+
     template class Vector3Imp<float>;
     template class Vector3Imp<double>;
     template class Vector3Imp<int>;

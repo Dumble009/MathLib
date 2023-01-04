@@ -11,6 +11,12 @@ void Vector3Tests(const T &x, const T &y, const T &z)
     VT v2 = VT(x, y, z);
 
     ASSERT_TRUE(v1 == v2);
+    ASSERT_FALSE(v1 != v2);
+
+    VT v3 = VT(x - 1, y - 1, z - 1);
+
+    ASSERT_FALSE(v1 == v3);
+    ASSERT_TRUE(v1 != v3);
 }
 
 template <class T>
@@ -24,6 +30,8 @@ TEST(CreateVector3, BasicAssertions)
     ASSERT_EQ(v.x, 1.0f);
     ASSERT_EQ(v.y, 2.0f);
     ASSERT_EQ(v.z, 3.0f);
+
+    Vector3Tests<float, Vector3>(1.0f, 2.0f, 3.0f);
 }
 
 TEST(CreateVector2, BasicAssertions)
