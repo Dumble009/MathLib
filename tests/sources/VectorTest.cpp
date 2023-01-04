@@ -29,6 +29,12 @@ void Vector3Tests(const T &x, const T &y, const T &z)
     VT v4 = VT(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
 
     ASSERT_TRUE(v3 == v4);
+
+    // 引き算が正しくできるかどうか
+    v3 = v1 - v2;
+    v4 = VT(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
+
+    ASSERT_TRUE(v3 == v4);
 }
 
 template <class T, class VT>
