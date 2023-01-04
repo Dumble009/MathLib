@@ -43,4 +43,7 @@ namespace math
     }
 
     template class Vector2Imp<float>;
+    template class Vector2Imp<double>;
+    template class Vector2Imp<int>;
+    template class Vector2Imp<long long>;
 }
