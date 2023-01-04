@@ -13,6 +13,9 @@ namespace math
         T const &operator[](size_t i) const override;
         Vector2Imp<T> operator+(const Vector2Imp<T> &v) const;
         Vector2Imp<T> operator-(const Vector2Imp<T> &v) const;
+
+        Vector2Imp<T> operator*(const T &s) const;
+        Vector2Imp<T> operator/(const T &s) const;
     };
 
     using Vector2 = Vector2Imp<float>;

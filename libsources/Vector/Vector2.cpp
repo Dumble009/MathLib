@@ -55,6 +55,18 @@ namespace math
         return Vector2Imp<T>(this->x - v.x, this->y - v.y);
     }
 
+    template <class T>
+    Vector2Imp<T> Vector2Imp<T>::operator*(const T &s) const
+    {
+        return Vector2Imp<T>(this->x * s, this->y * s);
+    }
+
+    template <class T>
+    Vector2Imp<T> Vector2Imp<T>::operator/(const T &s) const
+    {
+        return Vector2Imp<T>(this->x / s, this->y / s);
+    }
+
     template class Vector2Imp<float>;
     template class Vector2Imp<double>;
     template class Vector2Imp<int>;

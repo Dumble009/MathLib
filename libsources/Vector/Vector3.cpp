@@ -64,6 +64,18 @@ namespace math
         return Vector3Imp<T>(this->x - v.x, this->y - v.y, this->z - v.z);
     }
 
+    template <class T>
+    Vector3Imp<T> Vector3Imp<T>::operator*(const T &s) const
+    {
+        return Vector3Imp<T>(this->x * s, this->y * s, this->z * s);
+    }
+
+    template <class T>
+    Vector3Imp<T> Vector3Imp<T>::operator/(const T &s) const
+    {
+        return Vector3Imp<T>(this->x / s, this->y / s, this->z / s);
+    }
+
     template class Vector3Imp<float>;
     template class Vector3Imp<double>;
     template class Vector3Imp<int>;
