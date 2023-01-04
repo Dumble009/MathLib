@@ -53,22 +53,6 @@ namespace math
     }
 
     template <class T>
-    bool Vector3Imp<T>::operator==(const Vector3Imp<T> &v) const
-    {
-        return MathFunctions::Compare(this->x, v.x) &&
-               MathFunctions::Compare(this->y, v.y) &&
-               MathFunctions::Compare(this->z, v.z);
-    }
-
-    template <class T>
-    bool Vector3Imp<T>::operator!=(const Vector3Imp<T> &v) const
-    {
-        return !(MathFunctions::Compare(this->x, v.x) &&
-                 MathFunctions::Compare(this->y, v.y) &&
-                 MathFunctions::Compare(this->z, v.z));
-    }
-
-    template <class T>
     Vector3Imp<T> Vector3Imp<T>::operator+(const Vector3Imp<T> &v) const
     {
         return Vector3Imp<T>(this->x + v.x, this->y + v.y, this->z + v.z);

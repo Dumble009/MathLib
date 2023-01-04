@@ -11,8 +11,6 @@ namespace math
         T x, y, z;
         T &operator[](size_t i) override;
         T const &operator[](size_t i) const override;
-        bool operator==(const Vector3Imp<T> &v) const;
-        bool operator!=(const Vector3Imp<T> &v) const;
         Vector3Imp<T> operator+(const Vector3Imp<T> &v) const;
     };
 
