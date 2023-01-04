@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Vector2.h"
+#include "MathFunctions/MathFunctions.h"
 
 #include <stdexcept>
 
@@ -40,6 +41,20 @@ namespace math
         }
 
         throw std::out_of_range("invalid range access to Vector");
+    }
+
+    template <class T>
+    bool Vector2Imp<T>::operator==(const Vector2Imp<T> &v) const
+    {
+        return MathFunctions::Compare(this->x, v.x) &&
+               MathFunctions::Compare(this->y, v.y);
+    }
+
+    template <class T>
+    bool Vector2Imp<T>::operator!=(const Vector2Imp<T> &v) const
+    {
+        return !(MathFunctions::Compare(this->x, v.x) &&
+                 MathFunctions::Compare(this->y, v.y));
     }
 
     template class Vector2Imp<float>;

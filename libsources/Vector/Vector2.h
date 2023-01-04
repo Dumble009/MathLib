@@ -11,6 +11,8 @@ namespace math
         T x, y;
         T &operator[](size_t i) override;
         T const &operator[](size_t i) const override;
+        bool operator==(const Vector2Imp<T> &v) const;
+        bool operator!=(const Vector2Imp<T> &v) const;
     };
 
     using Vector2 = Vector2Imp<float>;

@@ -19,9 +19,19 @@ void Vector3Tests(const T &x, const T &y, const T &z)
     ASSERT_TRUE(v1 != v3);
 }
 
-template <class T>
+template <class T, class VT>
 void Vector2Tests(const T &x, const T &y)
 {
+    VT v1 = VT(x, y);
+    VT v2 = VT(x, y);
+
+    ASSERT_TRUE(v1 == v2);
+    ASSERT_FALSE(v1 != v2);
+
+    VT v3 = VT(x - 1, y - 1);
+
+    ASSERT_FALSE(v1 == v3);
+    ASSERT_TRUE(v1 != v3);
 }
 
 TEST(CreateVector3, BasicAssertions)
@@ -39,4 +49,6 @@ TEST(CreateVector2, BasicAssertions)
     Vector2 v = Vector2(1.0f, 2.0f);
     ASSERT_EQ(v.x, 1.0f);
     ASSERT_EQ(v.y, 2.0f);
+
+    Vector2Tests<float, Vector2>(1.0f, 2.0f);
 }
