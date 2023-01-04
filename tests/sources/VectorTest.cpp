@@ -7,7 +7,13 @@ using namespace math;
 template <class T, class VT>
 void Vector3Tests(const T &x, const T &y, const T &z)
 {
+    // コンストラクタが正しく機能するかどうか
     VT v1 = VT(x, y, z);
+    ASSERT_EQ(v1.x, x);
+    ASSERT_EQ(v1.y, y);
+    ASSERT_EQ(v1.z, z);
+
+    // 比較演算子が正しく機能するかどうか
     VT v2 = VT(x, y, z);
 
     ASSERT_TRUE(v1 == v2);
@@ -17,6 +23,12 @@ void Vector3Tests(const T &x, const T &y, const T &z)
 
     ASSERT_FALSE(v1 == v3);
     ASSERT_TRUE(v1 != v3);
+
+    // 足し算が正しくできるかどうか
+    v3 = v1 + v2;
+    VT v4 = VT(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
+
+    ASSERT_TRUE(v3 == v4);
 }
 
 template <class T, class VT>
