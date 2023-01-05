@@ -79,9 +79,22 @@ void Vector3Tests(const T &x, const T &y, const T &z)
 
     AssignmentTest(v1, v3);
 
+    // 内積が正しくできるかどうか
     T dot = v1.Dot(v3);
-
     ASSERT_TRUE(MathFunctions::Compare(dot, v1.x * v3.x + v1.y * v3.y + v1.z * v3.z));
+
+    // 外積が正しくできるかどうか
+    VT cross = v1.Cross(v3);
+    ASSERT_TRUE(MathFunctions::Compare(cross.x, v1.y * v3.z - v1.z * v3.y));
+    ASSERT_TRUE(MathFunctions::Compare(cross.y, v1.z * v3.x - v1.x * v3.z));
+    ASSERT_TRUE(MathFunctions::Compare(cross.z, v1.x * v3.y - v1.y * v3.x));
+
+    VT xVec = VT(1, 0, 0);
+    VT yVec = VT(0, 1, 0);
+    cross = xVec.Cross(yVec);
+    ASSERT_TRUE(MathFunctions::Compare(cross.x, static_cast<T>(0)));
+    ASSERT_TRUE(MathFunctions::Compare(cross.y, static_cast<T>(0)));
+    ASSERT_TRUE(MathFunctions::Compare(cross.z, static_cast<T>(1)));
 }
 
 template <class T, class VT>
@@ -141,8 +154,8 @@ void Vector2Tests(const T &x, const T &y)
 
     AssignmentTest(v1, v3);
 
+    // 内積が正しく出来るかどうか
     T dot = v1.Dot(v3);
-
     ASSERT_TRUE(MathFunctions::Compare(dot, v1.x * v3.x + v1.y * v3.y));
 }
 

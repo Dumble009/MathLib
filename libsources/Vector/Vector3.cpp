@@ -15,6 +15,12 @@ namespace math
     }
 
     template <class T>
+    Vector3Imp<T> Vector3Imp<T>::Cross(const Vector3Imp<T> &v) const
+    {
+        return Vector3Imp<T>(this->y * v.z - this->z * v.y, this->z * v.x - this->x * v.z, this->x * v.y - this->y * v.x);
+    }
+
+    template <class T>
     Vector3Imp<T> Vector3Imp<T>::operator+(const Vector3Imp<T> &v) const
     {
         return Vector3Imp<T>(this->x + v.x, this->y + v.y, this->z + v.z);

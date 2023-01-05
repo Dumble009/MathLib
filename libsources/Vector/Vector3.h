@@ -11,6 +11,8 @@ namespace math
 
         T x, y, z;
 
+        Vector3Imp<T> Cross(const Vector3Imp<T> &v) const;
+
         Vector3Imp<T> operator+(const Vector3Imp<T> &v) const;
         Vector3Imp<T> operator-(const Vector3Imp<T> &v) const;
 
