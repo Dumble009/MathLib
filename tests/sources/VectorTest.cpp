@@ -157,6 +157,10 @@ void Vector2Tests(const T &x, const T &y)
     // 内積が正しく出来るかどうか
     T dot = v1.Dot(v3);
     ASSERT_TRUE(MathFunctions::Compare(dot, v1.x * v3.x + v1.y * v3.y));
+
+    // 外積が正しくできるかどうか
+    T cross = v1.Cross(v3); // 2次元における外積はスカラーを返す
+    ASSERT_TRUE(MathFunctions::Compare(cross, static_cast<T>(v1.x * v3.y - v1.y * v3.x)));
 }
 
 TEST(Vector3Test, BasicAssertions)

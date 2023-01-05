@@ -14,6 +14,12 @@ namespace math
     }
 
     template <class T>
+    T Vector2Imp<T>::Cross(const Vector2Imp<T> &v) const
+    {
+        return this->x * v.y - this->y * v.x;
+    }
+
+    template <class T>
     Vector2Imp<T> Vector2Imp<T>::operator+(const Vector2Imp<T> &v) const
     {
         return Vector2Imp<T>(this->x + v.x, this->y + v.y);

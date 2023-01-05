@@ -11,6 +11,8 @@ namespace math
 
         T x, y;
 
+        T Cross(const Vector2Imp<T> &v) const;
+
         Vector2Imp<T> operator+(const Vector2Imp<T> &v) const;
         Vector2Imp<T> operator-(const Vector2Imp<T> &v) const;
 
