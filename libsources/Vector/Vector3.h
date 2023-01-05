@@ -28,4 +28,7 @@ namespace math
     }
 
     using Vector3 = Vector3Imp<float>;
+    using Vector3d = Vector3Imp<double>;
+    using Vector3i = Vector3Imp<int>;
+    using Vector3ll = Vector3Imp<long long>;
 }

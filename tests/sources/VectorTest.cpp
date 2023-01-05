@@ -111,6 +111,9 @@ TEST(CreateVector3, BasicAssertions)
     ASSERT_EQ(v.z, 3.0f);
 
     Vector3Tests<float, Vector3>(1.0f, 2.0f, 3.0f);
+    Vector3Tests<double, Vector3d>(1.0, 2.0, 3.0);
+    Vector3Tests<int, Vector3i>(1, 2, 3);
+    Vector3Tests<long long, Vector3ll>(1ll, 2ll, 3ll);
 }
 
 TEST(CreateVector2, BasicAssertions)
@@ -120,4 +123,7 @@ TEST(CreateVector2, BasicAssertions)
     ASSERT_EQ(v.y, 2.0f);
 
     Vector2Tests<float, Vector2>(1.0f, 2.0f);
+    Vector2Tests<double, Vector2d>(1.0, 2.0);
+    Vector2Tests<int, Vector2i>(1, 2);
+    Vector2Tests<long long, Vector2ll>(1ll, 2ll);
 }
