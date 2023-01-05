@@ -41,6 +41,20 @@ namespace math
         return !(*(this) == v);
     }
 
+    template <int D, class T>
+    T &Vector<D, T>::operator[](size_t i)
+    {
+        void *ptr = this;
+        return static_cast<T *>(ptr)[i];
+    }
+
+    template <int D, class T>
+    T const &Vector<D, T>::operator[](size_t i) const
+    {
+        const void *ptr = this;
+        return static_cast<const T *>(ptr)[i];
+    }
+
     template class Vector<3, float>;
     template class Vector<3, double>;
     template class Vector<3, int>;

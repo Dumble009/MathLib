@@ -15,44 +15,6 @@ namespace math
     }
 
     template <class T>
-    T &Vector3Imp<T>::operator[](size_t i)
-    {
-        if (i == 0)
-        {
-            return x;
-        }
-        else if (i == 1)
-        {
-            return y;
-        }
-        else if (i == 2)
-        {
-            return z;
-        }
-
-        throw std::out_of_range("invalid range access to Vector");
-    }
-
-    template <class T>
-    T const &Vector3Imp<T>::operator[](size_t i) const
-    {
-        if (i == 0)
-        {
-            return x;
-        }
-        else if (i == 1)
-        {
-            return y;
-        }
-        else if (i == 2)
-        {
-            return z;
-        }
-
-        throw std::out_of_range("invalid range access to Vector");
-    }
-
-    template <class T>
     Vector3Imp<T> Vector3Imp<T>::operator+(const Vector3Imp<T> &v) const
     {
         return Vector3Imp<T>(this->x + v.x, this->y + v.y, this->z + v.z);
