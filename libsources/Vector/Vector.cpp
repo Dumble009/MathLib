@@ -4,6 +4,18 @@
 namespace math
 {
     template <int D, class T>
+    T Vector<D, T>::Dot(const Vector<D, T> &v)
+    {
+        T ret = static_cast<T>(0);
+        for (int i = 0; i < D; i++)
+        {
+            ret += (*this)[i] * v[i];
+        }
+
+        return ret;
+    }
+
+    template <int D, class T>
     void Vector<D, T>::operator+=(const Vector<D, T> &v)
     {
         for (int i = 0; i < D; i++)

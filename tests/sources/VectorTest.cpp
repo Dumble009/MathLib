@@ -1,6 +1,7 @@
 ﻿#include <gtest/gtest.h>
 #include "Vector/Vector3.h"
 #include "Vector/Vector2.h"
+#include "MathFunctions/MathFunctions.h"
 
 using namespace math;
 
@@ -77,6 +78,10 @@ void Vector3Tests(const T &x, const T &y, const T &z)
     ASSERT_TRUE(v3 == v4);
 
     AssignmentTest(v1, v3);
+
+    T dot = v1.Dot(v3);
+
+    ASSERT_TRUE(MathFunctions::Compare(dot, v1.x * v3.x + v1.y * v3.y + v1.z * v3.z));
 }
 
 template <class T, class VT>
@@ -135,6 +140,10 @@ void Vector2Tests(const T &x, const T &y)
     ASSERT_TRUE(v3 == v4);
 
     AssignmentTest(v1, v3);
+
+    T dot = v1.Dot(v3);
+
+    ASSERT_TRUE(MathFunctions::Compare(dot, v1.x * v3.x + v1.y * v3.y));
 }
 
 TEST(Vector3Test, BasicAssertions)

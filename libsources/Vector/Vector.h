@@ -7,6 +7,8 @@ namespace math
     class Vector
     {
     public:
+        T Dot(const Vector<D, T> &v);
+
         void operator+=(const Vector<D, T> &v);
         void operator-=(const Vector<D, T> &v);
         bool operator==(const Vector<D, T> &v) const;
