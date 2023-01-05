@@ -4,6 +4,24 @@
 namespace math
 {
     template <int D, class T>
+    void Vector<D, T>::operator+=(const Vector<D, T> &v)
+    {
+        for (int i = 0; i < D; i++)
+        {
+            (*this)[i] += v[i];
+        }
+    }
+
+    template <int D, class T>
+    void Vector<D, T>::operator-=(const Vector<D, T> &v)
+    {
+        for (int i = 0; i < D; i++)
+        {
+            (*this)[i] -= v[i];
+        }
+    }
+
+    template <int D, class T>
     bool Vector<D, T>::operator==(const Vector<D, T> &v) const
     {
         for (int i = 0; i < D; i++)

@@ -4,6 +4,21 @@
 
 using namespace math;
 
+// 加算代入、減算代入が正しく機能するかどうかのテスト
+template <class VT>
+void AssignmentTest(const VT &v1, const VT &v2)
+{
+    VT v3 = v1;
+    v3 += v2;
+    VT v4 = v1 + v2;
+    ASSERT_TRUE(v3 == v4);
+
+    v3 = v1;
+    v3 -= v2;
+    v4 = v1 - v2;
+    ASSERT_TRUE(v3 == v4);
+}
+
 template <class T, class VT>
 void Vector3Tests(const T &x, const T &y, const T &z)
 {
@@ -52,6 +67,8 @@ void Vector3Tests(const T &x, const T &y, const T &z)
     v4 = VT(v1.x / 10, v1.y / 10, v1.z / 10);
 
     ASSERT_TRUE(v3 == v4);
+
+    AssignmentTest(v1, v3);
 }
 
 template <class T, class VT>
@@ -101,9 +118,11 @@ void Vector2Tests(const T &x, const T &y)
     v4 = VT(v1.x / 10, v1.y / 10);
 
     ASSERT_TRUE(v3 == v4);
+
+    AssignmentTest(v1, v3);
 }
 
-TEST(CreateVector3, BasicAssertions)
+TEST(Vector3Test, BasicAssertions)
 {
     Vector3 v = Vector3(1.0f, 2.0f, 3.0f);
     ASSERT_EQ(v.x, 1.0f);
@@ -116,7 +135,7 @@ TEST(CreateVector3, BasicAssertions)
     Vector3Tests<long long, Vector3ll>(1ll, 2ll, 3ll);
 }
 
-TEST(CreateVector2, BasicAssertions)
+TEST(Vector2Test, BasicAssertions)
 {
     Vector2 v = Vector2(1.0f, 2.0f);
     ASSERT_EQ(v.x, 1.0f);

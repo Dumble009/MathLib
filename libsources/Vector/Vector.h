@@ -7,6 +7,8 @@ namespace math
     class Vector
     {
     public:
+        virtual void operator+=(const Vector<D, T> &v);
+        virtual void operator-=(const Vector<D, T> &v);
         virtual bool operator==(const Vector<D, T> &v) const;
         virtual bool operator!=(const Vector<D, T> &v) const;
         virtual T &operator[](size_t i) = 0;
