@@ -129,6 +129,11 @@ TEST(Vector3Test, BasicAssertions)
     ASSERT_EQ(v.y, 2.0f);
     ASSERT_EQ(v.z, 3.0f);
 
+    // 添え字アクセスが正しく出来るかどうか
+    ASSERT_EQ(v.x, v[0]);
+    ASSERT_EQ(v.y, v[1]);
+    ASSERT_EQ(v.z, v[2]);
+
     Vector3Tests<float, Vector3>(1.0f, 2.0f, 3.0f);
     Vector3Tests<double, Vector3d>(1.0, 2.0, 3.0);
     Vector3Tests<int, Vector3i>(1, 2, 3);
@@ -140,6 +145,10 @@ TEST(Vector2Test, BasicAssertions)
     Vector2 v = Vector2(1.0f, 2.0f);
     ASSERT_EQ(v.x, 1.0f);
     ASSERT_EQ(v.y, 2.0f);
+
+    // 添え字アクセスが正しくできるかどうか
+    ASSERT_EQ(v.x, v[0]);
+    ASSERT_EQ(v.y, v[1]);
 
     Vector2Tests<float, Vector2>(1.0f, 2.0f);
     Vector2Tests<double, Vector2d>(1.0, 2.0);
