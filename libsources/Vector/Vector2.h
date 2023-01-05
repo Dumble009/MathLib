@@ -8,9 +8,9 @@ namespace math
     {
     public:
         Vector2Imp<T>(const T &_x, const T &_y);
+
         T x, y;
-        T &operator[](size_t i) override;
-        T const &operator[](size_t i) const override;
+
         Vector2Imp<T> operator+(const Vector2Imp<T> &v) const;
         Vector2Imp<T> operator-(const Vector2Imp<T> &v) const;
 

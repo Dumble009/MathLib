@@ -7,11 +7,11 @@ namespace math
     class Vector
     {
     public:
-        virtual void operator+=(const Vector<D, T> &v);
-        virtual void operator-=(const Vector<D, T> &v);
-        virtual bool operator==(const Vector<D, T> &v) const;
-        virtual bool operator!=(const Vector<D, T> &v) const;
-        virtual T &operator[](size_t i) = 0;
-        virtual T const &operator[](size_t i) const = 0;
+        void operator+=(const Vector<D, T> &v);
+        void operator-=(const Vector<D, T> &v);
+        bool operator==(const Vector<D, T> &v) const;
+        bool operator!=(const Vector<D, T> &v) const;
+        T &operator[](size_t i);
+        T const &operator[](size_t i) const;
     };
 }

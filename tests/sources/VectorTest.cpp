@@ -28,6 +28,14 @@ void Vector3Tests(const T &x, const T &y, const T &z)
     ASSERT_EQ(v1.y, y);
     ASSERT_EQ(v1.z, z);
 
+    // 添え字アクセスが正しく出来るかどうか
+    ASSERT_EQ(v1.x, v1[0]);
+    ASSERT_EQ(v1.y, v1[1]);
+    ASSERT_EQ(v1.z, v1[2]);
+
+    // 構造体の大きさが正常かどうかの確認
+    ASSERT_EQ(sizeof(VT), sizeof(T) * 3);
+
     // 比較演算子が正しく機能するかどうか
     VT v2 = VT(x, y, z);
 
@@ -79,6 +87,13 @@ void Vector2Tests(const T &x, const T &y)
     ASSERT_EQ(v1.x, x);
     ASSERT_EQ(v1.y, y);
 
+    // 添え字アクセスが正しく出来るかどうか
+    ASSERT_EQ(v1.x, v1[0]);
+    ASSERT_EQ(v1.y, v1[1]);
+
+    // 構造体の大きさが正常かどうかの確認
+    ASSERT_EQ(sizeof(VT), sizeof(T) * 2);
+
     // 比較演算子が正しく機能するかどうか
     VT v2 = VT(x, y);
 
@@ -124,16 +139,6 @@ void Vector2Tests(const T &x, const T &y)
 
 TEST(Vector3Test, BasicAssertions)
 {
-    Vector3 v = Vector3(1.0f, 2.0f, 3.0f);
-    ASSERT_EQ(v.x, 1.0f);
-    ASSERT_EQ(v.y, 2.0f);
-    ASSERT_EQ(v.z, 3.0f);
-
-    // 添え字アクセスが正しく出来るかどうか
-    ASSERT_EQ(v.x, v[0]);
-    ASSERT_EQ(v.y, v[1]);
-    ASSERT_EQ(v.z, v[2]);
-
     Vector3Tests<float, Vector3>(1.0f, 2.0f, 3.0f);
     Vector3Tests<double, Vector3d>(1.0, 2.0, 3.0);
     Vector3Tests<int, Vector3i>(1, 2, 3);
@@ -142,14 +147,6 @@ TEST(Vector3Test, BasicAssertions)
 
 TEST(Vector2Test, BasicAssertions)
 {
-    Vector2 v = Vector2(1.0f, 2.0f);
-    ASSERT_EQ(v.x, 1.0f);
-    ASSERT_EQ(v.y, 2.0f);
-
-    // 添え字アクセスが正しくできるかどうか
-    ASSERT_EQ(v.x, v[0]);
-    ASSERT_EQ(v.y, v[1]);
-
     Vector2Tests<float, Vector2>(1.0f, 2.0f);
     Vector2Tests<double, Vector2d>(1.0, 2.0);
     Vector2Tests<int, Vector2i>(1, 2);
