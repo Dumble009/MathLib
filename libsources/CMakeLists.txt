@@ -2,6 +2,9 @@
 
 project(copy_root)
 
+add_subdirectory(Vector)
+add_subdirectory(MathFunctions)
+
 file(GLOB HEADER_FILES "*.h")
 
 message(STATUS "run root")
