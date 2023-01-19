@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(TestName GTest)
 
+if(NOT TARGET ${TestName})
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -26,3 +27,4 @@ target_link_libraries(${TestName} GTest::gtest_main MathLib) #その他必要な
 
 include(GoogleTest)
 gtest_discover_tests(${TestName})
+endif()
