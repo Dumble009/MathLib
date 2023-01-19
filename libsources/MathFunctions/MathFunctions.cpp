@@ -8,14 +8,7 @@ namespace math
 {
     bool MathFunctions::IsFloatAlmostSame(const float &f1, const float &f2, const float &epsilon)
     {
-        bool ret = std::fabs((float)(f1 - f2)) < epsilon; // 2つの浮動小数点の差分の絶対値が一定以下であれば一致しているとみなす。
-
-        if (ret)
-        {
-            std::cout << f1 << ":" << f2 << ":" << abs(f1 - f2) << ":" << epsilon << std::endl;
-        }
-
-        return ret;
+        return std::fabs((float)(f1 - f2)) < epsilon; // 2つの浮動小数点の差分の絶対値が一定以下であれば一致しているとみなす。
     }
 
     bool MathFunctions::IsDoubleAlmostSame(const double &d1, const double &d2, const double &epsilon)
