@@ -9,7 +9,7 @@ TEST(FloatAlmostSameTest, BasicAssertions)
     ASSERT_TRUE(MathFunctions::IsFloatAlmostSame(0.0f, 10000.0f * 0.0f));
 
     ASSERT_FALSE(MathFunctions::IsFloatAlmostSame(1.0f, 2.0f));
-    ASSERT_FALSE(MathFunctions::IsFloatAlmostSame(1.0f / 3.0f, 1.0f / 2.9f));
+    ASSERT_FALSE(MathFunctions::IsFloatAlmostSame(1.0f / 3.0f, 1.0f / 2.9f)) << 1.0f / 3.0f << ":" << 1.0f / 2.9f;
 }
 
 TEST(DoubleAlmostSameTest, BasicAssertions)
@@ -19,7 +19,7 @@ TEST(DoubleAlmostSameTest, BasicAssertions)
     ASSERT_TRUE(MathFunctions::IsDoubleAlmostSame(0.0, 10000.0 * 0.0));
 
     ASSERT_FALSE(MathFunctions::IsDoubleAlmostSame(1.0, 2.0));
-    ASSERT_FALSE(MathFunctions::IsDoubleAlmostSame(1.0 / 3.0, 1.0 / 2.9));
+    ASSERT_FALSE(MathFunctions::IsDoubleAlmostSame(1.0 / 3.0, 1.0 / 2.9)) << 1.0 / 3.0 << ":" << 1.0 / 2.9;
 }
 
 template <class T>
