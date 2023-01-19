@@ -1,4 +1,5 @@
 ﻿#include "MathFunctions.h"
+#include "Vector/Vector.h"
 
 #include <cmath>
 
