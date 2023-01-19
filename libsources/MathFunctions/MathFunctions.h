@@ -1,7 +1,6 @@
 ﻿#pragma once
 
 #include <float.h>
-#include "Vector/Vector.h"
 
 namespace math
 {

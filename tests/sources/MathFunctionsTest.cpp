@@ -1,5 +1,6 @@
 ﻿#include <gtest/gtest.h>
 #include "MathFunctions/MathFunctions.h"
+#include <cmath>
 using namespace math;
 
 TEST(FloatAlmostSameTest, BasicAssertions)
